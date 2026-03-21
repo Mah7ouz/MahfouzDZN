@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Questionnaire | Mahfouz | Brand Identity Designer</title>
+    <meta name="description"
+        content="Start your project with Mahfouz. Fill out our detailed questionnaire to help us understand your brand and design needs.">
+    <link rel="icon" type="image/png" href="assets/img/Favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="bg-elements">
+        <div class="glow-orb purple-orb"></div>
+        <div class="glow-orb blue-orb"></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.svg" alt="Mahfouz Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                <span>☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <header class="project-header">
+            <div class="container fade-in-up">
+                <span class="badge">Project Inquiry</span>
+                <h1>Let's build your <span>dream brand</span>.</h1>
+                <p>Fill out the questionnaire below to help me understand your vision and requirements better.</p>
+            </div>
+        </header>
+
+        <section class="questionnaire-section reveal">
+            <div class="container" id="questionnaire-container">
+                <form action="https://formspree.io/f/mzdjwwag" method="POST" enctype="multipart/form-data"
+                    class="questionnaire-form glass-card" id="questionnaire-form">
+
+                    <!-- 1. Basic Information -->
+                    <div class="form-section">
+                        <h3 class="section-title">1. Basic Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="full-name">Full Name *</label>
+                                <input type="text" id="full-name" name="name" required placeholder="Ahmed Mohamed">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="brand-name">Company / Brand Name *</label>
+                                <input type="text" id="brand-name" name="brand_name" required
+                                    placeholder="Your Brand Ltd.">
+                            </div>
+                            <div class="form-group">
+                                <label for="website">Website or Social Media (Optional)</label>
+                                <input type="url" id="website" name="website" placeholder="https://example.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Project Details -->
+                    <div class="form-section">
+                        <h3 class="section-title">2. Project Details</h3>
+                        <div class="form-group">
+                            <label>What type of design do you need? *</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-container">Logo Design
+                                    <input type="checkbox" name="services[]" value="logo">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="checkbox-container">Full Brand Identity
+                                    <input type="checkbox" name="services[]" value="branding" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="checkbox-container">Social Media Design
+                                    <input type="checkbox" name="services[]" value="social">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="checkbox-container">Print/Packaging
+                                    <input type="checkbox" name="services[]" value="print">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Brief description of your project *</label>
+                            <textarea id="description" name="project_description" rows="4" required
+                                placeholder="Tell me about your business and what you're looking for..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="goal">What is the goal of the project? *</label>
+                            <textarea id="goal" name="project_goal" rows="3" required
+                                placeholder="e.g., Launching a new product, rebranding for premium market..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 3. Brand Identity -->
+                    <div class="form-section">
+                        <h3 class="section-title">3. Brand Identity</h3>
+                        <div class="form-group">
+                            <label for="personality">Describe your brand personality *</label>
+                            <input type="text" id="personality" name="brand_personality" required
+                                placeholder="e.g., Luxury, Minimalist, Energetic, Trustworthy...">
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="colors-like">Preferred colors (if any)</label>
+                                <input type="text" id="colors-like" name="colors_pref"
+                                    placeholder="e.g., Deep Navy, Gold, Cream">
+                            </div>
+                            <div class="form-group">
+                                <label for="colors-dislike">Colors to avoid</label>
+                                <input type="text" id="colors-dislike" name="colors_dislike"
+                                    placeholder="e.g., Neon colors, Pink">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Do you have an existing brand identity? *</label>
+                            <div class="radio-group">
+                                <label class="radio-container">Yes
+                                    <input type="radio" name="existing_id" value="yes">
+                                    <span class="radio-mark"></span>
+                                </label>
+                                <label class="radio-container">No
+                                    <input type="radio" name="existing_id" value="no" checked>
+                                    <span class="radio-mark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Design Preferences -->
+                    <div class="form-section">
+                        <h3 class="section-title">4. Design Preferences</h3>
+                        <div class="form-group">
+                            <label for="references">Upload references or inspiration</label>
+                            <div class="file-upload">
+                                <input type="file" id="references" name="reference_file">
+                                <p>Drag and drop or click to upload (Images, PDFs)</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="likes">Share examples of designs you like (links or descriptions)</label>
+                            <textarea id="likes" name="design_likes" rows="3"
+                                placeholder="I love the minimalism of Apple and the elegance of Rolex..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="dislikes">Share examples you DON'T like</label>
+                            <textarea id="dislikes" name="design_dislikes" rows="3"
+                                placeholder="I hate cluttered designs or generic corporate fonts..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 5. Target Audience -->
+                    <div class="form-section">
+                        <h3 class="section-title">5. Target Audience</h3>
+                        <div class="form-group">
+                            <label for="audience">Who is your target audience? *</label>
+                            <input type="text" id="audience" name="target_audience" required
+                                placeholder="e.g., High-end property developers, Luxury watch collectors...">
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="demographics">Age range / demographics</label>
+                                <input type="text" id="demographics" name="demographics"
+                                    placeholder="e.g., 25-45, professionals, high income">
+                            </div>
+                            <div class="form-group">
+                                <label for="market">Market *</label>
+                                <select id="market" name="market_scope" required>
+                                    <option value="local">Local Market</option>
+                                    <option value="international" selected>International Market</option>
+                                    <option value="global">Global Presence</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Budget & Timeline -->
+                    <div class="form-section">
+                        <h3 class="section-title">6. Budget & Timeline</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="budget">Project budget *</label>
+                                <input type="text" id="budget" name="budget" required placeholder="e.g., $000">
+                            </div>
+                            <div class="form-group">
+                                <label for="deadline">Deadline / Timeline *</label>
+                                <input type="text" id="deadline" name="timeline" required placeholder="e.g., 4-6 weeks">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Is this urgent? *</label>
+                            <div class="radio-group">
+                                <label class="radio-container">Yes
+                                    <input type="radio" name="urgent" value="yes">
+                                    <span class="radio-mark"></span>
+                                </label>
+                                <label class="radio-container">No
+                                    <input type="radio" name="urgent" value="no" checked>
+                                    <span class="radio-mark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Additional Notes -->
+                    <div class="form-section">
+                        <h3 class="section-title">7. Additional Notes</h3>
+                        <div class="form-group">
+                            <label for="extra">Any extra details or requests</label>
+                            <textarea id="extra" name="additional_notes" rows="4"
+                                placeholder="Anything else you'd like to share?"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="submit-container">
+                        <button type="submit" class="btn btn-primary btn-glow btn-large">Start My Project</button>
+                        <p class="form-note">I'll get back to you within 24-48 hours with a customized proposal.</p>
+                    </div>
+
+                </form>
+
+                <div id="form-success" class="glass-card success-message"
+                    style="display: none; text-align: center; padding: 5rem 2rem;">
+                    <div class="success-icon" style="font-size: 4rem; color: var(--accent-blue); margin-bottom: 2rem;">✓
+                    </div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Thank You!</h2>
+                    <p
+                        style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto;">
+                        Your questionnaire has been submitted successfully. I'll review your details and get back to you
+                        within 24-48 hours.</p>
+                    <a href="index.html" class="btn btn-primary btn-glow">Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand fade-in-up">
+                <img src="assets/img/logo.svg" alt="Mahfouz Logo" class="logo-img" style="margin-bottom: 1.5rem;">
+                <h2>Mohamed Mahfouz</h2>
+                <p>Senior Brand Identity & Graphic Designer</p>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem; font-style: italic;">"Designed to convert.
+                    Built to impress."</p>
+                <a href="mailto:mmahfouz355@gmail.com" class="email-link footer-email">mmahfouz355@gmail.com</a>
+            </div>
+            <div class="footer-links fade-in-up delay-1">
+                <a href="https://www.behance.net/GeoMa7fouz" target="_blank" class="social-link">Behance</a>
+                <a href="https://www.linkedin.com/in/geoma7fouz/" target="_blank" class="social-link">LinkedIn</a>
+            </div>
+        </div>
+        <div class="container fade-in-up delay-2">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mohamed Mahfouz. All rights reserved.</p>
+                <p class="built-with">Designed to Convert.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

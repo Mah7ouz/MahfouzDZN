@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Sticky Navbar
     const navbar = document.getElementById("navbar");
+    const mobileToggle = document.getElementById("mobile-toggle");
+    const navLinks = document.getElementById("nav-links");
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
@@ -9,6 +11,85 @@ document.addEventListener("DOMContentLoaded", () => {
             navbar.classList.remove("scrolled");
         }
     });
+
+    // Mobile Menu Toggle
+    if (mobileToggle) {
+        mobileToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            mobileToggle.querySelector('span').textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+        });
+    }
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            if (mobileToggle) {
+                mobileToggle.querySelector('span').textContent = "☰";
+            }
+        });
+    });
+
+    // Questionnaire File Upload Listener
+    const fileInput = document.getElementById('references');
+    if (fileInput) {
+        const fileText = fileInput.nextElementSibling; // The <p> tag
+        fileInput.addEventListener('change', (e) => {
+            const files = e.target.files;
+            if (files.length > 0) {
+                fileText.textContent = `${files.length} file(s) selected: ${Array.from(files).map(f => f.name).join(', ')}`;
+                fileText.style.color = 'var(--accent-blue)';
+            } else {
+                fileText.textContent = 'Drag and drop or click to upload (Images, PDFs)';
+                fileText.style.color = 'var(--text-secondary)';
+            }
+        });
+    }
+
+    // Questionnaire Form AJAX Submission
+    const questionnaireForm = document.getElementById('questionnaire-form');
+    const formSuccess = document.getElementById('form-success');
+
+    if (questionnaireForm) {
+        questionnaireForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = questionnaireForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(questionnaireForm);
+
+            try {
+                const response = await fetch(questionnaireForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    questionnaireForm.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                    window.scrollTo({ top: formSuccess.offsetTop - 150, behavior: 'smooth' });
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        alert(data.errors.map(error => error.message).join(", "));
+                    } else {
+                        alert("Oops! There was a problem submitting your form. Please try again.");
+                    }
+                }
+            } catch (error) {
+                alert("Oops! There was a problem submitting your form. Please check your connection.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        });
+    }
 
     // Scroll Reveal Animation
     const revealElements = document.querySelectorAll(".reveal");
