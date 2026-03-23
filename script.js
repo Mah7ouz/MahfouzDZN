@@ -59,6 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
+            // Check if at least one service is selected
+            const services = questionnaireForm.querySelectorAll('input[name="services[]"]:checked');
+            if (services.length === 0) {
+                alert("Please select at least one type of design service.");
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                return;
+            }
+
             const formData = new FormData(questionnaireForm);
 
             try {
@@ -70,7 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.ok) {
                     questionnaireForm.style.display = 'none';
                     formSuccess.style.display = 'block';
-                    window.scrollTo({ top: formSuccess.offsetTop - 150, behavior: 'smooth' });
+                    
+                    // Improved scroll precision
+                    const scrollTarget = formSuccess.getBoundingClientRect().top + window.pageYOffset - 100;
+                    window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
                 } else {
                     alert("Oops! There was a problem submitting your form. Please try again.");
                 }
