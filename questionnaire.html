@@ -50,8 +50,13 @@
 
         <section class="questionnaire-section reveal">
             <div class="container" id="questionnaire-container">
-                <form action="https://formspree.io/f/mzdjwwag" method="POST" enctype="multipart/form-data"
+
+                <!-- ✅ Netlify Form -->
+                <form name="questionnaire" method="POST" data-netlify="true" enctype="multipart/form-data"
                     class="questionnaire-form glass-card" id="questionnaire-form">
+
+                    <!-- مهم -->
+                    <input type="hidden" name="form-name" value="questionnaire" />
 
                     <!-- 1. Basic Information -->
                     <div class="form-section">
@@ -251,6 +256,7 @@
                         within 24-48 hours.</p>
                     <a href="index.html" class="btn btn-primary btn-glow">Back to Home</a>
                 </div>
+
             </div>
         </section>
     </main>
@@ -277,6 +283,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Hidden Form (مهم لنتفلي) -->
+    <form name="questionnaire" data-netlify="true" hidden>
+        <input type="text" name="name" />
+    </form>
 
     <script src="script.js"></script>
 </body>
