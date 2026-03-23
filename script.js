@@ -62,12 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const formData = new FormData(questionnaireForm);
 
             try {
-                const response = await fetch(questionnaireForm.action, {
+                const response = await fetch("/", {
                     method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    body: formData
                 });
 
                 if (response.ok) {
@@ -75,12 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     formSuccess.style.display = 'block';
                     window.scrollTo({ top: formSuccess.offsetTop - 150, behavior: 'smooth' });
                 } else {
-                    const data = await response.json();
-                    if (data.errors) {
-                        alert(data.errors.map(error => error.message).join(", "));
-                    } else {
-                        alert("Oops! There was a problem submitting your form. Please try again.");
-                    }
+                    alert("Oops! There was a problem submitting your form. Please try again.");
                 }
             } catch (error) {
                 alert("Oops! There was a problem submitting your form. Please check your connection.");
