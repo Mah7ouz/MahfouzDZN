@@ -208,4 +208,39 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Stats Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const prefix = counter.getAttribute('data-prefix') || '';
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const duration = 1000;
+            let start = null;
+
+            const step = (timestamp) => {
+                if (!start) start = timestamp;
+                const progress = Math.min((timestamp - start) / duration, 1);
+                counter.innerText = `${prefix}${Math.floor(progress * target)}${suffix}`;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    counter.innerText = `${prefix}${target}${suffix}`;
+                }
+            };
+            window.requestAnimationFrame(step);
+        });
+    };
+
+    const statsSection = document.querySelector('.social-proof');
+    if (statsSection && counters.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateCounters();
+                observer.unobserve(statsSection);
+            }
+        }, { threshold: 0.1 });
+        observer.observe(statsSection);
+    }
 });
