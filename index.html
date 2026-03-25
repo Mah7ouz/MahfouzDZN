@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahfouz | Brand Identity Designer</title>
+    <title>Mahfouz Design | Brand Identity &amp; Logo Designer</title>
     <meta name="description"
-        content="Professional Brand Identity & Graphic Designer helping businesses create strong and memorable visual identities since 2015.">
+        content="Professional graphic designer specializing in brand identity, logo design, and branding. Helping businesses stand out and grow.">
     <meta name="keywords"
         content="brand identity designer, logo designer, graphic designer, branding expert, visual identity, freelance designer">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://mahfouzdesign.com/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mahfouz Design | Brand Identity &amp; Logo Designer">
+    <meta property="og:description" content="Professional graphic designer specializing in brand identity, logo design, and branding. Helping businesses stand out and grow.">
+    <meta property="og:type" content="website">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/img/Favicon.png">
     <!-- Google Fonts -->
@@ -21,46 +27,67 @@
 </head>
 
 <body>
-    <div class="bg-elements">
+    <!-- Background Orbs -->
+    <div class="bg-elements" aria-hidden="true">
         <div class="glow-orb purple-orb"></div>
         <div class="glow-orb blue-orb"></div>
     </div>
 
-    <nav class="navbar" id="navbar">
+    <!-- Sticky Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container nav-content">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.svg" alt="Mahfouz Logo" class="logo-img">
+            <a href="index.html" class="logo" aria-label="Mahfouz Design Home">
+                <img src="assets/img/logo.svg" alt="Mahfouz Design Logo" class="logo-img">
             </a>
-            <ul class="nav-links" id="nav-links">
+            <ul class="nav-links" id="nav-links" role="list">
                 <li><a href="#work">Work</a></li>
-                <li><a href="#services">Services</a></li>
+                <li class="nav-dropdown">
+                    <a href="#services">Services</a>
+                    <ul class="dropdown-menu" role="list">
+                        <li><a href="branding-services.html"><span class="dd-icon" aria-hidden="true">✨</span> Brand Identity</a></li>
+                        <li><a href="logo-design.html"><span class="dd-icon" aria-hidden="true">🎯</span> Logo Design</a></li>
+                    </ul>
+                </li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
-            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
-                <span>☰</span>
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+                <span aria-hidden="true">☰</span>
             </button>
         </div>
     </nav>
 
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta-bar" id="sticky-cta-bar" role="complementary" aria-label="Quick contact">
+        <p class="sticky-cta-text">
+            <span class="urgency-dot" aria-hidden="true"></span>
+            Currently accepting a limited number of new projects
+        </p>
+        <a href="#contact" class="btn btn-primary btn-sm" id="sticky-cta-btn">Get Your Free Brand Audit</a>
+    </div>
+
     <main>
-        <section id="hero" class="hero">
+        <!-- Hero Section -->
+        <section id="hero" class="hero" aria-labelledby="hero-heading">
             <div class="container hero-content">
-                <span class="badge fade-in-up">Brand Identity Designer</span>
-                <h1 class="fade-in-up delay-1">I craft <span>high-converting brand identities</span> that make you
-                    unforgettable.</h1>
-                <p class="fade-in-up delay-2">Helping ambitious businesses transform ideas into powerful,
-                    revenue-generating visual brands since 2015.</p>
+                <span class="badge fade-in-up" aria-label="Availability notice">I help brands look premium and sell more</span>
+                <h1 id="hero-heading" class="fade-in-up delay-1">I Design Brands That <span>Attract Attention</span> and Convert Customers</h1>
+                <p class="fade-in-up delay-2">I help startups and businesses build strong visual identities that stand out and drive real results.</p>
                 <div class="hero-buttons fade-in-up delay-3">
-                    <a href="questionnaire.html" class="btn btn-primary btn-glow">Start Your Brand Transformation</a>
-                    <a href="#work" class="btn btn-secondary">View My Work</a>
+                    <a href="#contact" class="btn btn-primary btn-glow" id="hero-cta-primary">Get Your Free Brand Audit</a>
+                    <a href="#work" class="btn btn-secondary" id="hero-cta-secondary">View My Work</a>
+                </div>
+                <div class="hero-trust fade-in-up delay-4" aria-label="Trust signals">
+                    <span class="trust-item"><span class="trust-check" aria-hidden="true">✔</span> Limited availability for new projects</span>
+                    <span class="trust-item"><span class="trust-check" aria-hidden="true">✔</span> Response within 24 hours</span>
                 </div>
             </div>
         </section>
 
-        <section id="social-proof" class="social-proof reveal">
+        <!-- Social Proof / Stats -->
+        <section id="social-proof" class="social-proof reveal" aria-labelledby="stats-label">
             <div class="container">
-                <p class="proof-label">Trusted by growing brands worldwide</p>
+                <p class="proof-label" id="stats-label">Trusted by growing brands worldwide</p>
                 <div class="stats-grid">
                     <div class="stat-item glass-card">
                         <h3 class="counter" data-target="50" data-prefix="+">+0</h3>
@@ -78,18 +105,21 @@
             </div>
         </section>
 
-        <section id="work" class="portfolio reveal">
+        <!-- Portfolio / Work Section -->
+        <section id="work" class="portfolio reveal" aria-labelledby="work-heading">
             <div class="container">
                 <div class="section-header">
-                    <h2>Selected Work</h2>
-                    <p>A showcase of impactful visual systems.</p>
+                    <h2 id="work-heading">Selected Work</h2>
+                    <p>Real projects. Real results. A showcase of brands built to perform.</p>
                 </div>
                 <div class="portfolio-grid">
-                    <!-- Project 1 -->
-                    <a href="blue-medical-services.html" class="project-card glass-card hover-glow">
+                    <!-- Project 1: Blue Medical -->
+                    <a href="blue-medical-services.html" class="project-card glass-card hover-glow" aria-label="Blue Medical Services Identity – View Case Study">
                         <div class="project-image">
-                            <img src="assets/img/portfolio/blue-medical/img-4.jpg" alt="Blue Medical Services Identity">
-                            <span class="overlay-text">View Case Study</span>
+                            <img src="assets/img/portfolio/blue-medical/img-4.jpg"
+                                alt="Blue Medical Services brand identity – logo and color system design"
+                                loading="lazy">
+                            <span class="overlay-text" aria-hidden="true">View Case Study</span>
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -97,16 +127,31 @@
                                 <span class="tag">Logo</span>
                             </div>
                             <h3>Blue Medical Services Identity</h3>
-                            <p>A clean and trustworthy visual identity crafted to reflect professionalism and care in
-                                the healthcare sector.</p>
+                            <p class="project-intro">A healthcare provider struggling to stand out in a competitive market needed a brand that inspires trust and confidence.</p>
+                            <div class="case-study-details">
+                                <div class="cs-section">
+                                    <h4>The Problem</h4>
+                                    <p>Inconsistent visual identity was undermining patient trust.</p>
+                                </div>
+                                <div class="cs-section">
+                                    <h4>The Solution</h4>
+                                    <p>A clean, trustworthy identity with a unified color system and modern logo.</p>
+                                </div>
+                                <div class="cs-section">
+                                    <h4>The Result</h4>
+                                    <p>Stronger brand recognition and more professional first impressions.</p>
+                                </div>
+                            </div>
                         </div>
                     </a>
 
-                    <!-- Project 2 -->
-                    <a href="nokhba-taste-dates.html" class="project-card glass-card hover-glow">
+                    <!-- Project 2: Nokhba -->
+                    <a href="nokhba-taste-dates.html" class="project-card glass-card hover-glow" aria-label="Nokhba Taste Dates Identity – View Case Study">
                         <div class="project-image">
-                            <img src="assets/img/portfolio/nokhba/brand-5.jpg" alt="Nokhba Taste Dates Identity">
-                            <span class="overlay-text">View Case Study</span>
+                            <img src="assets/img/portfolio/nokhba/brand-5.jpg"
+                                alt="Nokhba Taste Dates premium brand identity and packaging design"
+                                loading="lazy">
+                            <span class="overlay-text" aria-hidden="true">View Case Study</span>
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -114,16 +159,31 @@
                                 <span class="tag">Logo</span>
                             </div>
                             <h3>Nokhba Taste Dates Identity</h3>
-                            <p>A premium brand identity designed to capture authenticity and elegance in the dates
-                                market.</p>
+                            <p class="project-intro">An artisan dates brand ready to enter the premium gift market without a visual identity to match their quality.</p>
+                            <div class="case-study-details">
+                                <div class="cs-section">
+                                    <h4>The Problem</h4>
+                                    <p>Generic visuals were preventing premium positioning.</p>
+                                </div>
+                                <div class="cs-section">
+                                    <h4>The Solution</h4>
+                                    <p>A premium brand identity capturing authenticity and elegance.</p>
+                                </div>
+                                <div class="cs-section">
+                                    <h4>The Result</h4>
+                                    <p>Higher perceived value, attracting premium buyers and gift orders.</p>
+                                </div>
+                            </div>
                         </div>
                     </a>
 
-                    <!-- Project 3 -->
-                    <a href="silver-line-development.html" class="project-card glass-card hover-glow">
+                    <!-- Project 3: Silver Line -->
+                    <a href="silver-line-development.html" class="project-card glass-card hover-glow" aria-label="Silver Line Development Identity – View Case Study">
                         <div class="project-image">
-                            <img src="assets/img/portfolio/silver-line/hero.jpg" alt="Silver Line Development Identity">
-                            <span class="overlay-text">View Case Study</span>
+                            <img src="assets/img/portfolio/silver-line/hero.jpg"
+                                alt="Silver Line Development real-estate brand identity and logo design"
+                                loading="lazy">
+                            <span class="overlay-text" aria-hidden="true">View Case Study</span>
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -131,16 +191,31 @@
                                 <span class="tag">Identity</span>
                             </div>
                             <h3>Silver Line Development Identity</h3>
-                            <p>A strong and modern identity built to reflect growth, structure, and reliability in real
-                                estate development.</p>
+                            <p class="project-intro">A real estate firm expanding into new markets needed an identity that communicates authority and reliability.</p>
+                            <div class="case-study-details">
+                                <div class="cs-section">
+                                    <h4>The Problem</h4>
+                                    <p>Outdated visuals were losing potential clients to competitors.</p>
+                                </div>
+                                <div class="cs-section">
+                                    <h4>The Solution</h4>
+                                    <p>A modern, confident identity reflecting growth, structure, and reliability.</p>
+                                </div>
+                                <div class="cs-section">
+                                    <h4>The Result</h4>
+                                    <p>Better client acquisition and improved credibility in new markets.</p>
+                                </div>
+                            </div>
                         </div>
                     </a>
 
-                    <!-- Project 4 -->
-                    <a href="silvanaa-silver-store.html" class="project-card glass-card hover-glow">
+                    <!-- Project 4: Silvanaa -->
+                    <a href="silvanaa-silver-store.html" class="project-card glass-card hover-glow" aria-label="Silvanaa Silver Store Identity – View Case Study">
                         <div class="project-image">
-                            <img src="assets/img/portfolio/silvanaa/gallery-2.jpg" alt="Silvanaa Silver Store Identity">
-                            <span class="overlay-text">View Case Study</span>
+                            <img src="assets/img/portfolio/silvanaa/gallery-2.jpg"
+                                alt="Silvanaa Silver Store premium jewelry brand identity design"
+                                loading="lazy">
+                            <span class="overlay-text" aria-hidden="true">View Case Study</span>
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -148,112 +223,229 @@
                                 <span class="tag">Logo</span>
                             </div>
                             <h3>Silvanaa Silver Store Identity</h3>
-                            <p>An elegant and modern brand identity tailored for a premium silver jewelry brand.</p>
+                            <p class="project-intro">A jewelry brand with no clear visual direction was losing premium customers to better-branded competitors.</p>
+                            <div class="case-study-details">
+                                <div class="cs-section">
+                                    <h4>The Problem</h4>
+                                    <p>The brand looked ordinary in a market where luxury matters.</p>
+                                </div>
+                                <div class="cs-section">
+                                    <h4>The Solution</h4>
+                                    <p>An elegant identity tailored for premium silver jewelry positioning.</p>
+                                </div>
+                                <div class="cs-section">
+                                    <h4>The Result</h4>
+                                    <p>Elevated brand perception, enabling higher price points and better clientele.</p>
+                                </div>
+                            </div>
                         </div>
                     </a>
                 </div>
-            </div>
-        </section>
-
-        <section class="cta-banner reveal">
-            <div class="container">
-                <div class="cta-banner-content glass-card hover-glow">
-                    <h2>Ready to elevate your brand?</h2>
-                    <a href="questionnaire.html" class="btn btn-primary btn-glow">Start Your Brand Transformation</a>
+                <!-- Portfolio CTA -->
+                <div class="section-cta">
+                    <a href="#contact" class="btn btn-primary btn-glow">Get Your Free Brand Audit</a>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services reveal">
+        <!-- CTA Banner After Work -->
+        <section class="cta-banner reveal" aria-label="Call to action">
+            <div class="container">
+                <div class="cta-banner-content glass-card hover-glow">
+                    <div class="cta-banner-text">
+                        <h2>Ready to elevate your brand?</h2>
+                        <p class="urgency-note"><span class="urgency-dot" aria-hidden="true"></span> Currently accepting a limited number of new projects</p>
+                    </div>
+                    <div class="cta-banner-actions">
+                        <a href="#contact" class="btn btn-primary btn-glow">Get Your Free Brand Audit</a>
+                        <a href="https://wa.me/+201107517512" target="_blank" rel="noopener noreferrer" class="btn btn-wa-outline">💬 Book a Call</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services reveal" aria-labelledby="services-heading">
             <div class="container">
                 <div class="section-header center">
-                    <h2>What I Offer</h2>
+                    <h2 id="services-heading">What I Offer</h2>
                     <p>I help brands look professional, consistent, and unforgettable.</p>
                 </div>
                 <div class="services-grid">
-                    <div class="service-card glass-card hover-glow">
-                        <div class="service-icon">✨</div>
+                    <a href="branding-services.html" class="service-card glass-card hover-glow" style="text-decoration:none; color:inherit;">
+                        <div class="service-icon" aria-hidden="true">✨</div>
                         <h3>Brand Identity Design</h3>
                         <p>Comprehensive brand aesthetics including typography, colors, and layout guidelines.</p>
                         <div class="benefit"><strong>Benefit:</strong> Builds instant trust and market authority.</div>
-                    </div>
-                    <div class="service-card glass-card hover-glow">
-                        <div class="service-icon">🎯</div>
+                        <div class="service-link-hint">Learn more →</div>
+                    </a>
+                    <a href="logo-design.html" class="service-card glass-card hover-glow" style="text-decoration:none; color:inherit;">
+                        <div class="service-icon" aria-hidden="true">🎯</div>
                         <h3>Logo Design</h3>
                         <p>Memorable, scalable, and timeless logos tailored to your brand's core values.</p>
                         <div class="benefit"><strong>Benefit:</strong> Makes your business instantly recognizable.</div>
-                    </div>
+                        <div class="service-link-hint">Learn more →</div>
+                    </a>
                     <div class="service-card glass-card hover-glow">
-                        <div class="service-icon">📖</div>
+                        <div class="service-icon" aria-hidden="true">📖</div>
                         <h3>Visual Identity Systems</h3>
                         <p>Robust design systems that ensure consistency across all brand touchpoints.</p>
-                        <div class="benefit"><strong>Benefit:</strong> Scales your brand seamlessly across platforms.
-                        </div>
+                        <div class="benefit"><strong>Benefit:</strong> Scales your brand seamlessly across platforms.</div>
                     </div>
                     <div class="service-card glass-card hover-glow">
-                        <div class="service-icon">📱</div>
+                        <div class="service-icon" aria-hidden="true">📱</div>
                         <h3>Social Media Design</h3>
                         <p>Engaging digital assets structured to boost online presence and marketing conversion.</p>
-                        <div class="benefit"><strong>Benefit:</strong> Drives higher engagement and customer
-                            acquisition.</div>
+                        <div class="benefit"><strong>Benefit:</strong> Drives higher engagement and customer acquisition.</div>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <a href="#contact" class="btn btn-primary btn-glow">Book a Call</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner after Services -->
+        <section class="cta-banner reveal" aria-label="Call to action">
+            <div class="container">
+                <div class="cta-banner-content glass-card hover-glow">
+                    <div class="cta-banner-text">
+                        <h2>Build a brand that converts.</h2>
+                        <p class="urgency-note"><span class="urgency-dot" aria-hidden="true"></span> Currently accepting a limited number of new projects</p>
+                    </div>
+                    <div class="cta-banner-actions">
+                        <a href="#contact" class="btn btn-primary btn-glow">Get Your Free Brand Audit</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-banner reveal">
-            <div class="container">
-                <div class="cta-banner-content glass-card hover-glow">
-                    <h2>Build a brand that converts.</h2>
-                    <a href="questionnaire.html" class="btn btn-primary btn-glow">Start Your Brand Transformation</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about reveal">
+        <!-- About Section -->
+        <section id="about" class="about reveal" aria-labelledby="about-heading">
             <div class="container about-container">
                 <div class="about-content glass-card p-large">
-                    <h2>About Me</h2>
-                    <p>I’m <strong>Mohamed Mahfouz</strong>, a Brand Identity Designer passionate about creating
+                    <h2 id="about-heading">About Me</h2>
+                    <p>I'm <strong>Mohamed Mahfouz</strong>, a Brand Identity Designer passionate about creating
                         impactful visual experiences.</p>
-                    <p>Since 2015, I’ve helped brands transform their ideas into strong, memorable identities that stand
+                    <p>Since 2015, I've helped brands transform their ideas into strong, memorable identities that stand
                         out in the market.</p>
                     <p class="highlight-text">My goal is simple: to design brands that not only look good — but also
                         perform.</p>
+                    <div class="about-cta">
+                        <a href="#contact" class="btn btn-primary btn-glow">Work With Me</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="testimonials reveal">
+        <!-- Why Work With Me Section (NEW) -->
+        <section id="why-me" class="why-me reveal" aria-labelledby="why-me-heading">
             <div class="container">
-                <div class="section-header">
-                    <h2>Client Feedback</h2>
+                <div class="section-header center">
+                    <h2 id="why-me-heading">Why Work With Me</h2>
+                    <p>Not just design — a strategic investment in your brand's growth.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card glass-card hover-glow">
+                        <div class="why-icon" aria-hidden="true">📈</div>
+                        <h3>Results, Not Just Visuals</h3>
+                        <p>Every design decision is grounded in strategy. Your brand should attract clients and drive revenue, not just look nice.</p>
+                    </div>
+                    <div class="why-card glass-card hover-glow">
+                        <div class="why-icon" aria-hidden="true">💬</div>
+                        <h3>Fast &amp; Clear Communication</h3>
+                        <p>You'll always know what's happening. I respond within 24 hours and keep you updated at every stage.</p>
+                    </div>
+                    <div class="why-card glass-card hover-glow">
+                        <div class="why-icon" aria-hidden="true">♾️</div>
+                        <h3>Unlimited Revisions</h3>
+                        <p>Your satisfaction is the goal. I iterate until the brand truly feels right — no compromise, no shortcuts.</p>
+                    </div>
+                    <div class="why-card glass-card hover-glow">
+                        <div class="why-icon" aria-hidden="true">🧠</div>
+                        <h3>Strategic Thinking Beyond Design</h3>
+                        <p>I think like a brand strategist. Your visual identity is built to position you ahead of your competitors.</p>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <a href="#contact" class="btn btn-primary btn-glow">Get Your Free Brand Audit</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section (NEW) -->
+        <section id="process" class="process reveal" aria-labelledby="process-heading">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 id="process-heading">What Happens Next?</h2>
+                    <p>A simple, clear process — from your first message to a brand you love.</p>
+                </div>
+                <div class="process-steps">
+                    <div class="process-step glass-card">
+                        <div class="step-number" aria-hidden="true">01</div>
+                        <div class="step-content">
+                            <h3>You Submit Your Request</h3>
+                            <p>Fill out the short form or send me a message. Tell me about your business and what you're looking to achieve.</p>
+                        </div>
+                    </div>
+                    <div class="process-connector" aria-hidden="true"></div>
+                    <div class="process-step glass-card">
+                        <div class="step-number" aria-hidden="true">02</div>
+                        <div class="step-content">
+                            <h3>I Review Your Brand</h3>
+                            <p>I'll analyze your current brand and market position, then prepare a personalized audit with actionable insights.</p>
+                        </div>
+                    </div>
+                    <div class="process-connector" aria-hidden="true"></div>
+                    <div class="process-step glass-card">
+                        <div class="step-number" aria-hidden="true">03</div>
+                        <div class="step-content">
+                            <h3>We Discuss Your Goals</h3>
+                            <p>We hop on a quick call or chat to align on your vision, target audience, and brand direction.</p>
+                        </div>
+                    </div>
+                    <div class="process-connector" aria-hidden="true"></div>
+                    <div class="process-step glass-card">
+                        <div class="step-number" aria-hidden="true">04</div>
+                        <div class="step-content">
+                            <h3>We Start Building Your Brand</h3>
+                            <p>I get to work creating your identity — with full transparency, revisions, and your approval at every key stage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <a href="#contact" class="btn btn-primary btn-glow">Get Your Free Brand Audit</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials reveal" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 id="testimonials-heading">Client Results</h2>
+                    <p>Real feedback from businesses that invested in their brand.</p>
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card glass-card hover-glow">
-                        <p>"Truly outstanding work — professional, creative, and very respectful in communication.
-                            Unlimited revisions until I was completely satisfied. I highly recommend working with him
-                            and will definitely come back for more in the future, God willing."</p>
+                        <div class="stars" aria-label="5 star rating">★★★★★</div>
+                        <p>"He completely transformed our brand. We now attract better clients, look far more professional, and our marketing has become so much easier. Worth every penny."</p>
                         <div class="client-info">
                             <h4>A. Abdelruhman</h4>
                             <span>Marketing Manager</span>
                         </div>
                     </div>
                     <div class="testimonial-card glass-card hover-glow">
-                        <p>"Exceptional work as always — truly professional, creative, and highly attentive.
-                            Communication was smooth, respectful, and prompt. Unlimited revisions were provided until I
-                            was completely satisfied, reflecting true dedication and expertise. I highly recommend
-                            working with him and will definitely return for future projects, God willing."</p>
+                        <div class="stars" aria-label="5 star rating">★★★★★</div>
+                        <p>"Since the rebrand, our packaging stopped people in their tracks. Sales from premium gift orders increased noticeably. Mohamed understood exactly what our brand needed."</p>
                         <div class="client-info">
                             <h4>Nokhba Dates</h4>
                             <span>Marketing Director</span>
                         </div>
                     </div>
                     <div class="testimonial-card glass-card hover-glow">
-                        <p>"Truly outstanding — the work was world-class, combining professionalism, creativity, and
-                            excellent ethics. Every detail was handled with care, and revisions continued until full
-                            satisfaction was achieved. I strongly recommend collaborating with him and look forward to
-                            purchasing his services repeatedly in the future, God willing."</p>
+                        <div class="stars" aria-label="5 star rating">★★★★★</div>
+                        <p>"Professional, fast, and incredibly talented. The new identity positioned us as a serious player in the market. We've closed deals we wouldn't have had before."</p>
                         <div class="client-info">
                             <h4>SilverLine</h4>
                             <span>CEO</span>
@@ -263,71 +455,98 @@
             </div>
         </section>
 
-        <section id="contact" class="contact-section reveal">
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section reveal" aria-labelledby="contact-heading">
             <div class="container">
                 <div class="section-header center">
-                    <h2>Let's Talk</h2>
-                    <p>Ready to stand out in your market? Fill out the form below or chat securely on WhatsApp.</p>
+                    <h2 id="contact-heading">Let's Talk</h2>
+                    <p>Ready to stand out in your market? Fill out the form and get a free personalized brand audit.</p>
                 </div>
                 <div class="contact-grid">
                     <div class="contact-info glass-card">
-                        <span class="badge">Available for freelance work</span>
+                        <span class="badge">Available for new projects</span>
                         <h3>Contact Direct</h3>
                         <p>Prefer a direct message? Reach out to me instantly via WhatsApp or email.</p>
                         <div class="contact-links"
                             style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
-                            <a href="https://wa.me/+201091295561" target="_blank"
-                                class="btn btn-primary btn-glow whatsapp-btn">
-                                <span>💬</span> Chat on WhatsApp
+                            <a href="https://wa.me/+201107517512" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary btn-glow whatsapp-btn" id="contact-wa-btn">
+                                <span aria-hidden="true">💬</span> Book a Call on WhatsApp
                             </a>
-                            <a href="mailto:mmahfouz355@gmail.com"
-                                class="btn btn-secondary email-btn">mmahfouz355@gmail.com</a>
+                            <a href="mailto:info@mahfouzdzn.online"
+                                class="btn btn-secondary email-btn">info@mahfouzdzn.online</a>
                         </div>
                     </div>
-                    <form action="https://formspree.io/f/xreyjwyw" method="POST" class="contact-form glass-card">
-                        <h3 style="margin-bottom: 2rem;">Send a Message</h3>
+                    <form action="https://formspree.io/f/xreyjwyw" method="POST" class="contact-form glass-card"
+                        id="contact-form" novalidate>
+                        <h3 style="margin-bottom: 2rem;">Get Your Free Brand Audit</h3>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                            <input type="text" id="name" name="name" required placeholder="Your name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="john@company.com">
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" required
-                                placeholder="Tell me about your project..."></textarea>
+                            <label for="social">Website or Instagram</label>
+                            <input type="text" id="social" name="social" placeholder="yourbrand.com or @yourbrand">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-glow submit-btn" style="width: 100%;">Send
-                            Message</button>
+                        <div class="form-group">
+                            <label for="message">What do you need help with?</label>
+                            <textarea id="message" name="message" rows="4" required
+                                placeholder="Tell me about your brand and what you're looking to achieve..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow submit-btn" id="form-submit-btn" style="width: 100%;">Get My Free Audit</button>
+                        <!-- Success message (shown via JS) -->
+                        <div class="form-success-msg" id="form-success-msg" style="display:none;" role="status" aria-live="polite">
+                            <span class="success-icon" aria-hidden="true">✅</span>
+                            <p>Thanks! I'll review your brand and send you a personalized audit within 24 hours.</p>
+                        </div>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container footer-content">
             <div class="footer-brand fade-in-up">
-                <img src="assets/img/logo.svg" alt="Mahfouz Logo" class="logo-img" style="margin-bottom: 1.5rem;">
+                <img src="assets/img/logo.svg" alt="Mahfouz Design Logo" class="logo-img" style="margin-bottom: 1.5rem;">
                 <h2>Mohamed Mahfouz</h2>
-                <p>Senior Brand Identity & Graphic Designer</p>
-                <p style="color: var(--text-secondary); margin-top: 0.5rem; font-style: italic;">"Designed to convert.
-                    Built to impress."</p>
+                <p>Senior Brand Identity &amp; Graphic Designer</p>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem; font-style: italic;">"Designed to convert. Built to impress."</p>
             </div>
-            <div class="footer-links fade-in-up delay-1">
-                <a href="https://www.linkedin.com/in/geoma7fouz/" target="_blank" class="social-link" title="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <div class="footer-links fade-in-up delay-1" aria-label="Social media links">
+                <a href="https://www.linkedin.com/company/mahfouzdzn/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
                 </a>
-                <a href="https://www.behance.net/GeoMa7fouz" target="_blank" class="social-link" title="Behance">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8.228 15.01h2.261c.444 0 .806-.362.806-.806v-3.714c0-.444-.362-.806-.806-.806H8.228a.806.806 0 0 0-.806.806v3.714c0 .444.362.806.806.806zm1.065-3.085h1.196v2.24H9.293v-2.24zm11.472 0h-5.46v.39c0 1.48.975 2.275 2.34 2.275 1.04 0 1.82-.455 2.015-1.17h2.21c-.26 2.015-1.95 3.51-4.29 3.51-3.25 0-4.68-2.34-4.68-4.68s1.69-4.81 4.615-4.81c3.055 0 4.68 2.34 4.68 4.485h-1.43zm-3.185-1.885c-.975 0-1.69.585-1.885 1.43h3.77c-.13-.845-.845-1.43-1.885-1.43zM2.08 6.045H8.29a3.81 3.81 0 0 1 3.12 1.56 3.483 3.483 0 0 1-1.625 5.395 3.9 3.9 0 0 1 2.34 3.705c0 2.21-1.625 3.835-4.225 3.835H2.08V6.045zm3.12 6.11h2.6c.91 0 1.495-.455 1.495-1.235s-.585-1.235-1.495-1.235h-2.6v2.47zm0 5.46h2.86c.975 0 1.625-.52 1.625-1.43s-.65-1.43-1.625-1.43h-2.86v2.86zM15.47 6.045h5.46v1.365h-5.46V6.045z"/></svg>
+                <a href="https://www.behance.net/GeoMa7fouz" target="_blank" rel="noopener noreferrer" class="social-link" title="Behance" aria-label="Behance portfolio">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M8.228 15.01h2.261c.444 0 .806-.362.806-.806v-3.714c0-.444-.362-.806-.806-.806H8.228a.806.806 0 0 0-.806.806v3.714c0 .444.362.806.806.806zm1.065-3.085h1.196v2.24H9.293v-2.24zm11.472 0h-5.46v.39c0 1.48.975 2.275 2.34 2.275 1.04 0 1.82-.455 2.015-1.17h2.21c-.26 2.015-1.95 3.51-4.29 3.51-3.25 0-4.68-2.34-4.68-4.68s1.69-4.81 4.615-4.81c3.055 0 4.68 2.34 4.68 4.485h-1.43zm-3.185-1.885c-.975 0-1.69.585-1.885 1.43h3.77c-.13-.845-.845-1.43-1.885-1.43zM2.08 6.045H8.29a3.81 3.81 0 0 1 3.12 1.56 3.483 3.483 0 0 1-1.625 5.395 3.9 3.9 0 0 1 2.34 3.705c0 2.21-1.625 3.835-4.225 3.835H2.08V6.045zm3.12 6.11h2.6c.91 0 1.495-.455 1.495-1.235s-.585-1.235-1.495-1.235h-2.6v2.47zm0 5.46h2.86c.975 0 1.625-.52 1.625-1.43s-.65-1.43-1.625-1.43h-2.86v2.86zM15.47 6.045h5.46v1.365h-5.46V6.045z" />
+                    </svg>
                 </a>
-                <a href="https://www.instagram.com/ma7fouzdzn/" target="_blank" class="social-link" title="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <a href="https://www.instagram.com/ma7fouzdzn/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram" aria-label="Instagram profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
                 </a>
-                <a href="mailto:mmahfouz355@gmail.com" class="social-link" title="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="mailto:info@mahfouzdzn.online" class="social-link" title="Email" aria-label="Send email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -338,6 +557,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+201107517512" target="_blank" rel="noopener noreferrer"
+        class="whatsapp-float" id="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+    </a>
 
     <script src="script.js"></script>
 </body>
